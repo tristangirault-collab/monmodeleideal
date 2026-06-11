@@ -44,15 +44,14 @@ const supabase = window.supabase.createClient(
 
 // AJOUTER UNE ANNONCE
 async function addAnnonce() {
+  alert ("addAnnonce OK");
   const titre = document.getElementById("titre").value;
   const ville = document.getElementById("ville").value;
   const date = document.getElementById("date").value;
   const description = document.getElementById("description").value;
 
-  const { error } = await supabase
-    .from("annonces")
-    .insert([{ titre, ville, date, description }]);
-
+  console.log("DONNEES:", titre, ville, date, description);
+  }
   if (error) {
     alert("Erreur : " + error.message);
   } else {
