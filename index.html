@@ -5,7 +5,16 @@
   <title>MonModeleIdeal</title>
 </head>
 <body style="font-family: Arial; padding: 20px;">
+<h2>Créer une annonce</h2>
 
+<input id="titre" placeholder="Titre annonce"><br><br>
+<input id="ville" placeholder="Ville"><br><br>
+<input id="date" placeholder="Date"><br><br>
+<textarea id="description" placeholder="Description"></textarea><br><br>
+
+<button onclick="addAnnonce()">Publier</button>
+
+<hr>
   <h1>MonModeleIdeal</h1>
   <p>Trouvez un modèle pour vos examens de coiffure et esthétique</p>
 
@@ -22,6 +31,25 @@
     <p>Date : 20 juillet</p>
     <p>Recherche modèle soin visage</p>
   </div>
+<script>
+async function addAnnonce() {
+  const titre = document.getElementById("titre").value;
+  const ville = document.getElementById("ville").value;
+  const date = document.getElementById("date").value;
+  const description = document.getElementById("description").value;
 
+  await fetch("https://TON_SUPABASE_URL/rest/v1/annonces", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": "TON_SUPABASE_ANON_KEY",
+      "Authorization": "Bearer TON_SUPABASE_ANON_KEY"
+    },
+    body: JSON.stringify({ titre, ville, date, description })
+  });
+
+  alert("Annonce publiée !");
+}
+</script>
 </body>
 </html>
