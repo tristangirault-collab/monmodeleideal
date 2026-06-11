@@ -52,13 +52,7 @@ window.addAnnonce = async function () {
 
   console.log("DONNEES:", titre, ville, date, description);
   }
-  if (error) {
-    alert("Erreur : " + error.message);
-  } else {
-    alert("Annonce publiée !");
-    loadAnnonces();
-  }
-}
+  
 
 // AFFICHER LES ANNONCES
 async function loadAnnonces() {
