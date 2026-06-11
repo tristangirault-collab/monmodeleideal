@@ -41,6 +41,7 @@ const supabase = window.supabase.createClient(
 
 // AJOUTER UNE ANNONCE
 async function addAnnonce() {
+  console.log("CLICK OK")
   const titre = document.getElementById("titre").value;
   const ville = document.getElementById("ville").value;
   const date = document.getElementById("date").value;
