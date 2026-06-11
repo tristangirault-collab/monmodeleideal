@@ -5,6 +5,15 @@
   <title>MonModeleIdeal</title>
 </head>
 <body style="font-family: Arial; padding: 20px;">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+const supabaseUrl = "TON_URL_ICI";
+const supabaseKey = "TA_KEY_ICI";
+
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+</script>
+
 <h2>Créer une annonce</h2>
 
 <input id="titre" placeholder="Titre annonce"><br><br>
