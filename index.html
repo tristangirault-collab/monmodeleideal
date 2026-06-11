@@ -43,7 +43,7 @@ const supabase = window.supabase.createClient(
 );
 
 // AJOUTER UNE ANNONCE
-async function addAnnonce() {
+window.addAnnonce = async function () {
   alert ("addAnnonce OK");
   const titre = document.getElementById("titre").value;
   const ville = document.getElementById("ville").value;
